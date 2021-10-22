@@ -46,9 +46,10 @@ function getModelDescription() {
             console.log(gun_model_description);
             break;
         }
-        return gun_model_description;
     }
+    return gun_model_description;
 }
+
 
     //This function finds the filling price based on the 
     //
@@ -131,13 +132,30 @@ function getModelDescription() {
 //             = "*You have not selected any season";
 //     }
 // }
+function checkButton() {
 
+    var getSelectedValue = $(this.checked);
+    var getSelectedValue_jq = $(this.checked);
+    var getSelectedValue_name = getSelectedValue_jq.attr('description');
+    console.log(getSelectedValue_name);
+
+    if (getSelectedValue != null) {
+        var getSelectedValue_name = $(this).attr('description');
+        console.log(getSelectedValue_name);
+
+    }
+    else {
+        document.getElementById("error").innerHTML
+            = "*You have not selected any season";
+    }
+
+}
 
 function checkButton() {
 
     var getSelectedValue = $(this.checked);
     var getSelectedValue_name = getModelDescription();
-    console.log(getSelectedValue_name);
+    console.log();
    
     if (getSelectedValue != null) {
         var getSelectedValue_name = $(this).attr('description');

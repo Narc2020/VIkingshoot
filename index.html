@@ -18,11 +18,11 @@
                         <label>Size Of the Cake</label>
                         <label class='radiolabel'><input type="radio" class="gun_model" name="gun_model"
                                 targetvalue="20" value="gun_model_1" description="Gun model 1" data-price="20"
-                                onclick="checkButton(), inputRemoveDuplicates(), getAttribute()" />Gun model 1
+                                onclick="checkButton(), inputRemoveDuplicates()" />Gun model 1
                             ($20)</label><br />
                         <label class='radiolabel'><input type="radio" class="gun_model" name="gun_model"
                                 targetvalue="25" value="gun_model_2" description="Gun model 2" data-price="25"
-                                onclick="checkButton(), inputRemoveDuplicates() , getAttribute()"/>Gun model 2
+                                onclick="checkButton(), inputRemoveDuplicates()"/>Gun model 2
                             ($25)</label><br />
                         <label class='radiolabel'><input type="radio" class="gun_model" name="gun_model"
                                 targetvalue="35" value="gun_model_3" description="Gun model 3" data-price="35"
@@ -34,26 +34,26 @@
                             ($75)</label><br />
                     </fieldset>
 
-                    <fieldset id="field_area_2" class="field_area"> ,calculateMainTotal()
+                    <fieldset id="field_area_2" class="field_area">
                         <label>Filling</label>
                         <label class='radiolabel' style="display:none"><input type="radio" name="gun_accesories" targetvalue="0"  value="gun_acc_0"
-                                onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" checked />Gun Accesories
+                                onclick="checkButton(), inputRemoveDuplicates_acc()" checked />Gun Accesories
                             1 ($5)</label>
                         <label class='radiolabel'><input type="radio" name="gun_accesories" targetvalue="5"
                                 value="gun_acc_1" 
-                                onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()"/>Gun Accesories
+                                onclick="checkButton(), inputRemoveDuplicates_acc()"/>Gun Accesories
                             1 ($5)</label ><br />
                         <label class='radiolabel'><input type="radio" name="gun_accesories" targetvalue="5"
                                 value="gun_acc_2"
-                                onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" />Gun Accesories
+                                onclick="checkButton(), inputRemoveDuplicates_acc()" />Gun Accesories
                             2 ($5)</label><br />
                         <label class='radiolabel'><input type="radio" name="gun_accesories" targetvalue="7"
                                 value="gun_acc_3"
-                                onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" />Gun Accesories
+                                onclick="checkButton(), inputRemoveDuplicates_acc()" />Gun Accesories
                             3 ($7)</label><br />
                         <label class='radiolabel'><input type="radio" name="gun_accesories" targetvalue="8"
                                 value="gun_acc_4"
-                                onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" />Gun Accesories
+                                onclick="checkButton(), inputRemoveDuplicates_acc()" />Gun Accesories
                             4 ($8)</label><br />
                     </fieldset>
                     <div id="totalPrice"></div>
@@ -124,7 +124,7 @@
                     SSL Renewals
                 </td>
 
-                <td class="description">Yearly renewals of SSL certificates on main domain and several subdomains</td>
+                <td class="description" id="Item_desc">Yearly renewals of SSL certificates on main domain and several subdomains</td>
 
                 <td><span class="sale-price">$75.00</span></td>
 
