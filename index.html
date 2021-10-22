@@ -39,11 +39,11 @@
                         <fieldset id="field_area_2" class="field_area">
                             <label>Filling</label>
                             <label class='radiolabel' style="display:none"><input type="radio" name="gun_accesories" targetvalue="0"
-                                    value="gun_acc_0" onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()"   />Gun
+                                    value="gun_acc_0" onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" />Gun
                                 Accesories
                                 1 ($5)</label>
                             <label class='radiolabel'><input type="radio" name="gun_accesories" targetvalue="5" value="gun_acc_1"
-                                    onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" checked/>Gun
+                                    onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" checked />Gun
                                 Accesories
                                 1 ($5)</label><br />
                             <label class='radiolabel'><input type="radio" name="gun_accesories" targetvalue="5" value="gun_acc_2"
@@ -82,27 +82,28 @@
                 Appleville, WI 53719
 
                 Phone: (555) 555-5555</p>
-                <div id="logo">
-                    <div id="logoctr">
-                    </div>
-                    <div id="logohelp">
+            <div id="logo">
+                <div id="logoctr">
+                </div>
+                <div id="logohelp">
 
                 </div>
 
             </div>
-            </div>
-            <div style="clear:both"></div>
-            <div id="customer">
-                <p id="customer-title">Widget Corp.
-                    c/o Steve Widget</p>
-                <table id="meta">
-                    <tr>
-                        <td class="meta-head">Invoice #</td>
-                        <td><textarea>000123</textarea></td>
-                    </tr>
-                    <tr>
-                        <td class="meta-head">Date</td>
-                        <td><textarea id="date">December 15, 2009</textarea></td>
+        </div>
+        <div style="clear:both"></div>
+        <div id="customer">
+            <p id="customer-title">Widget Corp.
+                c/o Steve Widget</p>
+            <table id="meta">
+                <tr>
+                    <td class="meta-head">Invoice #</td>
+                    <td><textarea>000123</textarea></td>
+                </tr>
+                <tr>
+                    <td class="meta-head">Date</td>
+                    <td><textarea id="date"></textarea>
+                    </td>
                     </tr>
                     <tr>
                         <td class="meta-head">Amount Due</td>
@@ -110,75 +111,86 @@
                             <div class="due">$875.00</div>
                         </td>
                     </tr>
-                </table>
-            </div>
-            <table id="items">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Description</th>
-                        <th>Unit Cost</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody id="dj-table-body">
-                    <tr class="item-row">
+                    </table>
+                    </div>
+                    <table id="items">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th>Unit Cost</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dj-table-body">
+                            <tr class="item-row">
 
                     <td class="item-name">
-                        SSL Renewals
+
                     </td>
 
                     <td class="description"></td>
 
-                    <td><span class="sale-price">$75.00</span></td>
+                    <td><span class="sale-price"></span></td>
 
-                    <td><span class="qty">3</span></td>
+                    <td><span class="qty"></span></td>
 
-                    <td><span class="price">$225.00</span></td>
+                    <td><span class="price"></span></td>
 
                 </tr>
-                </tbody>
-                <tfooter>
-                    <tr>
-                        <td colspan="2" class="blank"> </td>
-                        <td colspan="2" class="total-line">Subtotal</td>
-                        <td class="total-value">
-                            <div id="subtotal">$875.00</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="blank"> </td>
-                        <td colspan="2" class="total-line">Total</td>
-                        <td class="total-value">
-                            <div id="total"><span>$</span><span id="total-value">$0.00</span></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="blank"> </td>
-                        <td colspan="2" class="total-line">Amount Paid</td>
+                <!-- <tr class="Acc-item-row">
+                                    
+                                        <td class="Acc-item-name">
+                                            SSL Renewals
+                                        </td>
+                                    
+                                        <td class="Acc-description"></td>
+                                    <td><span class="Acc-sale-price">$75.00</span></td>
+                                    <td><span class="Acc-qty">3</span></td>
+                                    <td><span class="Acc-price">$225.00</span></td>
+                                </tr> -->
+            </tbody>
+            <tfooter>
+                <tr>
+                    <td colspan="2" class="blank"> </td>
+                    <td colspan="2" class="total-line">Subtotal</td>
+                    <td class="total-value">
+                        <div id="subtotal">$875.00</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="blank"> </td>
+                    <td colspan="2" class="total-line">Total</td>
+                    <td class="total-value">
+                        <div id="total"><span>$</span><span id="total-value">$0.00</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="blank"> </td>
+                    <td colspan="2" class="total-line">Amount Paid</td>
                     <td class="total-value"><span>$<input type="number" id="TakenAmount" onchange="AmountPaid()"
                                 style="border: none;"></span></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="blank"> </td>
-                        <td colspan="2" class="total-line balance">Balance Due</td>
-                        <td class="total-value balance">
-                            <div class="due"><span>$</span><span id="due-value">0.00</span></div>
-                        </td>
-                    </tr>
-                    </tfooter>
-                    </table>
-                    <div id="terms">
-                        <h5>Terms</h5>
-                        <textarea>NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.</textarea>
-                    </div>
-                    </div>
-                    <button id="print_invoice">Print me</button>
-                    <script src="./jquery.js"></script>
-                    <script src="main.js"></script>
-                    <script>
-                    </script>
+                </tr>
+                <tr>
+                    <td colspan="2" class="blank"> </td>
+                    <td colspan="2" class="total-line balance">Balance Due</td>
+                    <td class="total-value balance">
+                        <div class="due"><span>$</span><span id="due-value">0.00</span></div>
+                    </td>
+                </tr>
+                </tfooter>
+                </table>
+                <div id="terms">
+                    <h5>Terms</h5>
+                    <textarea>NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.</textarea>
+                </div>
+                </div>
+                <button id="print_invoice">Print me</button>
+                <script src="./jquery.js"></script>
+                <script src="main.js"></script>
+                <script>
+                </script>
 
 </body>
 
