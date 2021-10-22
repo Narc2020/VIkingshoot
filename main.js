@@ -42,8 +42,34 @@ function getModelDescription() {
     var selectedModel = theForm.elements["gun_model"];
     for (var i = 0; i < selectedModel.length; i++) {
         if (selectedModel[i].checked) {
+            var gun_model_ItemName = selectedModel[i].getAttribute("name");
+            console.log(gun_model_ItemName);
+
             gun_model_description = selectedModel[i].getAttribute("description");
             console.log(gun_model_description);
+
+            var gun_model_Price = selectedModel[i].getAttribute("targetvalue");
+            var gun_model_Price_int = parseInt(gun_model_Price);
+            console.log(gun_model_Price_int);
+            var gun_model_qty = 2;
+            var gun_model_value = selectedModel[i].getAttribute("value");
+            console.log(gun_model_value);
+
+            gun_accesories_prices = getgun_accesoriesPrice();
+            gun_accesories_prices_int = parseInt(gun_accesories_prices);
+            console.log(gun_accesories_prices_int);
+
+            var gun_model_TotalPrice = parseInt(gun_accesories_prices) + parseInt(gun_model_Price);
+            console.log(gun_model_TotalPrice);
+
+            var divobj = document.getElementById('dj-table-body');
+            divobj.innerHTML = " <tr class='item - row'>";
+            divobj.innerHTML += "<td class='item - name'>" + gun_model_ItemName + "</td>";
+            divobj.innerHTML += "<td class='description'>" + gun_model_description + "</td>";
+            divobj.innerHTML += "<td><span class='sale - price'>" + gun_model_Price_int + "</span></td>";
+            divobj.innerHTML += "<td><span class='qty'>" + gun_model_qty + "</span></td>";
+            divobj.innerHTML += "<td><span class='sale-price'>" + gun_model_Price_int + "</span></td>";
+            divobj.innerHTML += "<td><span class='price' > " + (gun_model_Price_int * gun_model_qty) + "</span ></td > ";
             break;
         }
     }
