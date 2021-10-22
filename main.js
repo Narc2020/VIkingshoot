@@ -32,7 +32,10 @@
         return gun_model_prices_var;
     }
     
-
+// function getAttribute(){
+//    var dataAttri= $(this).attr("data-id");
+//     console.log(dataAttri)
+// }
 function getModelDescription() {
     var gun_model_description = "";
     var theForm = document.forms["gunform"];
