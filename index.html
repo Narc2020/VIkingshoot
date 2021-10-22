@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div onload='hideTotal()'>
+    <div id="wrap">
+        <form action="" id="gunform" onsubmit="return false;">
+            <div>
+                <div class="cont_order">
+
+                    <fieldset id="field_area_1" class="field_area">
+                        <legend>Make your cake!</legend>
+                        <label>Size Of the Cake</label>
+                        <label class='radiolabel'><input type="radio" class="gun_model" name="gun_model"
+                                targetvalue="20" value="gun_model_1" description="Gun model 1" data-price="20"
+                                onclick="checkButton(), inputRemoveDuplicates()" />Gun model 1
+                            ($20)</label><br />
+                        <label class='radiolabel'><input type="radio" class="gun_model" name="gun_model"
+                                targetvalue="25" value="gun_model_2" description="Gun model 2" data-price="25"
+                                onclick="checkButton(), inputRemoveDuplicates()" />Gun model 2
+                            ($25)</label><br />
+                        <label class='radiolabel'><input type="radio" class="gun_model" name="gun_model"
+                                targetvalue="35" value="gun_model_3" description="Gun model 3" data-price="35"
+                                onclick="checkButton(), inputRemoveDuplicates()" />Gun model 3
+                            ($35)</label><br />
+                        <label class='radiolabel'><input type="radio" class="gun_model" name="gun_model"
+                                targetvalue="75" value="gun_model_4" description="Gun model 4" data-price="75"
+                                onclick="checkButton(), inputRemoveDuplicates()" />Gun model 4
+                            ($75)</label><br />
+                    </fieldset>
+
+                    <fieldset id="field_area_2" class="field_area"> ,calculateMainTotal()
+                        <label>Filling</label>
+                        <label class='radiolabel' style="display:none"><input type="radio" name="gun_accesories" targetvalue="0"  value="gun_acc_0"
+                                onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" checked />Gun Accesories
+                            1 ($5)</label>
+                        <label class='radiolabel'><input type="radio" name="gun_accesories" targetvalue="5"
+                                value="gun_acc_1" 
+                                onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()"/>Gun Accesories
+                            1 ($5)</label ><br />
+                        <label class='radiolabel'><input type="radio" name="gun_accesories" targetvalue="5"
+                                value="gun_acc_2"
+                                onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" />Gun Accesories
+                            2 ($5)</label><br />
+                        <label class='radiolabel'><input type="radio" name="gun_accesories" targetvalue="7"
+                                value="gun_acc_3"
+                                onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" />Gun Accesories
+                            3 ($7)</label><br />
+                        <label class='radiolabel'><input type="radio" name="gun_accesories" targetvalue="8"
+                                value="gun_acc_4"
+                                onclick="calculateTotal(), checkButton(), inputRemoveDuplicates_acc()" />Gun Accesories
+                            4 ($8)</label><br />
+                    </fieldset>
+                    <div id="totalPrice"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--End of wrap-->
+</div>
+<!--End of wrap-->
+
+
+
+<div id="result"></div>
+
+<div id="page-wrap">
+    <h4 id="header">INVOICE</h4>
+    <div id="identity">
+        <p id="address">Chris Coyier
+            123 Appleseed Street
+            Appleville, WI 53719
+
+            Phone: (555) 555-5555</p>
+        <div id="logo">
+            <div id="logoctr">
+            </div>
+            <div id="logohelp">
+
+            </div>
+
+        </div>
+    </div>
+    <div style="clear:both"></div>
+    <div id="customer">
+        <p id="customer-title">Widget Corp.
+            c/o Steve Widget</p>
+        <table id="meta">
+            <tr>
+                <td class="meta-head">Invoice #</td>
+                <td><textarea>000123</textarea></td>
+            </tr>
+            <tr>
+                <td class="meta-head">Date</td>
+                <td><textarea id="date">December 15, 2009</textarea></td>
+            </tr>
+            <tr>
+                <td class="meta-head">Amount Due</td>
+                <td>
+                    <div class="due">$875.00</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table id="items">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Unit Cost</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="dj-table-body">
+            <tr class="item-row">
+
+                <td class="item-name">
+                    SSL Renewals
+                </td>
+
+                <td class="description">Yearly renewals of SSL certificates on main domain and several subdomains</td>
+
+                <td><span class="sale-price">$75.00</span></td>
+
+                <td><span class="qty">3</span></td>
+
+                <td><span class="price">$225.00</span></td>
+
+            </tr>
+        </tbody>
+        <tfooter>
+            <tr>
+                <td colspan="2" class="blank"> </td>
+                <td colspan="2" class="total-line">Subtotal</td>
+                <td class="total-value">
+                    <div id="subtotal">$875.00</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="blank"> </td>
+                <td colspan="2" class="total-line">Total</td>
+                <td class="total-value">
+                    <div id="total"><span>$</span><span id="total-value">$0.00</span></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="blank"> </td>
+                <td colspan="2" class="total-line">Amount Paid</td>
+                <td class="total-value"><span>$<input type="number" id="TakenAmount" onchange="AmountPaid()" style="border: none;"></span></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="blank"> </td>
+                <td colspan="2" class="total-line balance">Balance Due</td>
+                <td class="total-value balance">
+                    <div class="due"><span>$</span><span id="due-value">0.00</span></div>
+                </td>
+            </tr>
+        </tfooter>
+    </table>
+    <div id="terms">
+        <h5>Terms</h5>
+        <textarea>NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.</textarea>
+    </div>
+</div>
+<button id="print_invoice">Print me</button>
+<script src="./jquery.js"></script>
+<script src="main.js"></script>
+<script>
+</script>
+
+</body>
+</html>
